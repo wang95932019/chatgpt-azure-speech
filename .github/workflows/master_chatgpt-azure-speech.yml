@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_ca00922f46324647a7970246984c54d2 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_42a5cf6778be4e09b539c541b0edfe45 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_398ca4f40c74430bbceb7995356964f2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_0081aa4e6f7d4c96987236de230e10bd }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_ca00922f46324647a7970246984c54d2 }}/appsvc/staticsite:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_398ca4f40c74430bbceb7995356964f2 }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'chatgpt-azure-speech'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_73210c87fd634de98b0f435dbb766cf2 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_ca00922f46324647a7970246984c54d2 }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_13080bcd6bda40939bdc64f587b82d08 }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_398ca4f40c74430bbceb7995356964f2 }}/appsvc/staticsite:${{ github.sha }}'
