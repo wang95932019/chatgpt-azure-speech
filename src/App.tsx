@@ -58,7 +58,7 @@ const initialMessages = [
     user: {
       avatar:
         // 'https://th.bing.com/th?id=ODLS.8bba7513-8633-4855-b376-c8bcac465d63',
-        '乙盟logo.png',
+        '小象logo.png',
     },
   },
 ]
@@ -199,7 +199,7 @@ export default function App() {
                 user: {
                   avatar:
                     // 'https://th.bing.com/th?id=ODLS.8bba7513-8633-4855-b376-c8bcac465d63',
-                    '乙盟logo.png',
+                    '小象logo.png',
                 },
               })
               chatMsgs.push(res.choices[0].message)
@@ -244,7 +244,7 @@ export default function App() {
         user: {
           avatar:
             // 'https://th.bing.com/th?id=ODLS.8bba7513-8633-4855-b376-c8bcac465d63',
-            '乙盟logo.png',
+            '小象logo.png',
         },
       })
     }
@@ -313,7 +313,7 @@ export default function App() {
         title: '',
         leftContent: {
           // label: 'Azure OpenAI Chat',
-          label: 'Immense Chat',
+          label: '乙盟AI机器人',
         },
         
         rightContent: [
