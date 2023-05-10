@@ -18,3 +18,44 @@ npm install
 npm run start
 ```
 你将拥有一个能说会道、精通80种语言的智能语音助手。虽然它可能没有人型机器人的外观，但在聊天能力方面绝对不逊色！ 
+
+## 部署步骤
+
+> 将本项目部署到azure中
+
+官方教程：[快速入门：创建 Node.js Web 应用 - Azure App Service | Microsoft Learn](https://learn.microsoft.com/zh-cn/azure/app-service/quickstart-nodejs?pivots=development-environment-vscode&tabs=windows)
+
+1. 在`azure`的`应用程序服务`中创建服务，名为`chatgpt-azure-speech`
+
+   <img src="assets/image-20230510134154150.png" alt="image-20230510134154150" style="zoom: 33%;" />
+
+2. 在`vscode`中安装插件`Azure Tools`
+
+3. 打包：`npm run build`
+
+4. 在`build`目录中创建`web.config`文件
+
+   ```shell
+   <?xml version="1.0"?>
+   <configuration>
+       <system.webServer>
+           <rewrite>
+               <rules>
+                   <rule name="React Routes" stopProcessing="true">
+                       <match url=".*" />
+                       <conditions logicalGrouping="MatchAll">
+                           <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                           <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                           <add input="{REQUEST_URI}" pattern="^/(api)" negate="true" />
+                       </conditions>
+                       <action type="Rewrite" url="/" />
+                   </rule>
+               </rules>
+           </rewrite>
+       </system.webServer>
+   </configuration>
+   ```
+
+5. 部署项目
+
+   <img src="assets/image-20230510133705292.png" alt="image-20230510133705292" style="zoom: 50%;" />
