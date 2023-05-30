@@ -14,7 +14,7 @@ import { getTokenOrRefresh } from './token_util'
 import { ResultReason } from 'microsoft-cognitiveservices-speech-sdk'
 
 let Azure_OpenAI_Endpoint: string = 'https://liuyindemo.openai.azure.com/'
-let Azure_OpenAI_Key: string = '062f501ab27342098537c7fc413d91c1'
+let Azure_OpenAI_Key: string = '983305cb7f694077ba4dd30d7793149e'
 let Azure_OpenAI_DeploymentName: string = 'Immense'
 let Azure_Speech_Key: string = '052cd8a2cc3f4765a830de9543e8d188'
 let Azure_Speech_Region: string = 'eastus'
